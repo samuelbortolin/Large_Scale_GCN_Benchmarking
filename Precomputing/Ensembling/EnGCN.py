@@ -91,7 +91,7 @@ class EnGCN(torch.nn.Module):
             pseudo_split_masks = split_masks
 
         print(
-            "------ pseudo labels inited, rate: {:.4f} ------".format(
+            "------ pseudo labels initiated, rate: {:.4f} ------".format(
                 pseudo_split_masks["train"].sum() / len(y)
             )
         )
@@ -150,7 +150,7 @@ class EnGCN(torch.nn.Module):
         print(
             f"Final train acc: {acc['train']*100:.4f}, "
             f"Final valid acc: {acc['valid']*100:.4f}, "
-            f"Dianl test acc: {acc['test']*100:.4f}"
+            f"Final test acc: {acc['test']*100:.4f}"
         )
         return acc["train"], acc["valid"], acc["test"]
 
