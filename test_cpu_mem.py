@@ -110,7 +110,7 @@ def main(args):
             pass
     print(
         "final mean and std of test acc: ",
-        f"{np.mean(list_test_acc)*100:.4f} $\\pm$ {np.std(list_test_acc)*100:.4f}",
+        f"{np.mean(list_test_acc)*100:.4f} ± {np.std(list_test_acc)*100:.4f}",
     )
 
 

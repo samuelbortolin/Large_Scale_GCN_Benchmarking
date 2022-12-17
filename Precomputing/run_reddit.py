@@ -141,7 +141,7 @@ for i in range(len(keys)):
             else:
                 print(config[keys[j]], end=' & ')
 
-        print(f"{perform['mean_test_acc']:.02f} $\\pm$ {perform['std_test_acc']:.02f} \\\\")
+        print(f"{perform['mean_test_acc']:.02f} ± {perform['std_test_acc']:.02f} \\\\")
 
         if best_acc < perform['mean_test_acc']:
             best_acc = perform['mean_test_acc']
