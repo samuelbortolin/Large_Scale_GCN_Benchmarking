@@ -79,7 +79,6 @@ class EnGCN(torch.nn.Module):
             pseudo_labels[split_masks["train"]] = y[split_masks["train"]]
             pseudo_split_masks = split_masks
         else:
-            print(f"dtype y: {y.dtype}")
             results = torch.zeros(y.size(0), self.num_classes)
             y_emb = torch.zeros(y.size(0), self.num_classes)
             y_emb[split_masks["train"]] = F.one_hot(
