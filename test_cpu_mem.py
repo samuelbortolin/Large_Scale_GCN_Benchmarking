@@ -9,7 +9,7 @@ import torch
 from torch.profiler import ProfilerActivity, profile
 
 from options.base_options import BaseOptions
-from trainer import trainer
+from trainer import Trainer
 from utils import print_args
 
 
@@ -74,7 +74,7 @@ def main(args):
         with profile(
             activities=[ProfilerActivity.CPU], profile_memory=True, record_shapes=True
         ) as prof:
-            trnr = trainer(args)
+            trnr = Trainer(args)
             if args.type_model in ["EnGCN"]:
                 train_loss, valid_acc, test_acc = trnr.train_ensembling(seed)
             else:

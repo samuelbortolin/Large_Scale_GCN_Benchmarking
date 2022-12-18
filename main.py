@@ -8,7 +8,7 @@ import numpy as np
 import torch
 
 from options.base_options import BaseOptions
-from trainer import trainer
+from trainer import Trainer
 from utils import print_args
 
 
@@ -65,7 +65,7 @@ def main(args):
     print_args(args)
 
     if args.debug_mem_speed:
-        trnr = trainer(args)
+        trnr = Trainer(args)
         trnr.mem_speed_bench()
 
     for seed in range(resume_seed, args.N_exp):
@@ -74,7 +74,7 @@ def main(args):
         args.random_seed = seed
         set_seed(args)
         # torch.cuda.empty_cache()
-        trnr = trainer(args)
+        trnr = Trainer(args)
         if args.type_model in [
             "SAdaGCN",
             "AdaGCN",

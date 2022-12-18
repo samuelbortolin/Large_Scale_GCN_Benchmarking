@@ -68,7 +68,7 @@ def idx2mask(idx, N_nodes):
     return mask
 
 
-class trainer(object):
+class Trainer(object):
     def __init__(self, args):
 
         self.dataset = args.dataset
