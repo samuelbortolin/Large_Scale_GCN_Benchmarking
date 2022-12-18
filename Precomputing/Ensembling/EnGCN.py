@@ -181,10 +181,10 @@ class EnGCN(torch.nn.Module):
     ):
         # load self.xs[hop] to train self.mlps[hop]
         x_train = x[split_mask["train"]]
-        pesudo_labels_train = pseudo_labels[split_mask["train"]]
+        pseudo_labels_train = pseudo_labels[split_mask["train"]]
         y_emb_train = y_emb[split_mask["train"]]
         train_set = torch.utils.data.TensorDataset(
-            x_train, y_emb_train, pesudo_labels_train
+            x_train, y_emb_train, pseudo_labels_train
         )
         train_loader = torch.utils.data.DataLoader(
             train_set, batch_size=self.batch_size, num_workers=8, pin_memory=True
