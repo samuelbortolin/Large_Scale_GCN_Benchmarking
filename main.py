@@ -96,7 +96,7 @@ def main(args):
 
         ## record training data
         print(
-            "mean and std of test acc: {:.4f} {:.4f} ".format(
+            "mean and std of test acc: {:.4f} {:.4f}".format(
                 np.mean(list_test_acc) * 100, np.std(list_test_acc) * 100
             )
         )
@@ -114,10 +114,7 @@ def main(args):
                 json.dump(to_save, f)
         except:
             pass
-    print(
-        "final mean and std of test acc: ",
-        f"{np.mean(list_test_acc)*100:.4f} ± {np.std(list_test_acc)*100:.4f}",
-    )
+    print(f"Final mean and std of test acc: {np.mean(list_test_acc)*100:.4f} ± {np.std(list_test_acc)*100:.4f}")
 
 
 if __name__ == "__main__":

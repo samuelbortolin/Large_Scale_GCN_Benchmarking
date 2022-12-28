@@ -12,4 +12,3 @@ python main.py --type_model EnGCN --dataset ogbn-arxiv \
     --SLE_threshold 0.5 \
     --N_exp 10 \
     --tosparse
-
